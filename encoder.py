@@ -26,7 +26,7 @@ def encode_bytes(str_bytes):
     bits_left = 8 * num_bytes - 6
     mask = 63 << bits_left
     for _ in range(4 * chunks):
-        # convert the next 3 bytes into 4 base-64 chars
+        # convert the bytes into base-64 chars
         num = (str_int & mask) >> bits_left
         res += BS64[num]
         bits_left -= 6
